@@ -58,6 +58,11 @@ A modern, full-stack inventory management system built with Next.js 16, featurin
 ![Add Product](https://github.com/nazmulhasannabil/inventory-management/blob/1149184e60b41159d7b0a1f0c328f3b6a4b43163/public/addproduct.png)
 *Intuitive form with validation and success notifications*
 
+
+### Settings
+![Settings](https://github.com/nazmulhasannabil/inventory-management/blob/1149184e60b41159d7b0a1f0c328f3b6a4b43163/public/settings.png)
+*User settings and configuration options*
+
 ## 🚀 Getting Started
 
 ### Prerequisites
