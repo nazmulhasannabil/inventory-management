@@ -54,11 +54,11 @@ A modern, full-stack inventory management system built with Next.js 16, featurin
 *Clean, modern sidebar with intuitive navigation*
 
 ### Product Management
-![Products](./screenshots/products.png)
+![Products](./product.png)
 *Comprehensive product listing with search and pagination*
 
 ### Add Product Form
-![Add Product](./screenshots/add-product.png)
+![Add Product](./addproduct.png)
 *Intuitive form with validation and success notifications*
 
 ## 🚀 Getting Started
