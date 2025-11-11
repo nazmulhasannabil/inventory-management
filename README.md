@@ -46,19 +46,16 @@ A modern, full-stack inventory management system built with Next.js 16, featurin
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](/inventorypro.png)
+![image_alt](https://github.com/nazmulhasannabil/inventory-management/blob/1149184e60b41159d7b0a1f0c328f3b6a4b43163/public/inventorypro.png)
+
 *Real-time analytics and key metrics at a glance*
 
-### Sidebar Navigation
-![Sidebar](/inventorypro.png)
-*Clean, modern sidebar with intuitive navigation*
-
 ### Product Management
-![Products](/product.png)
+![Products](https://github.com/nazmulhasannabil/inventory-management/blob/1149184e60b41159d7b0a1f0c328f3b6a4b43163/public/product.png)
 *Comprehensive product listing with search and pagination*
 
 ### Add Product Form
-![Add Product](/addproduct.png)
+![Add Product](https://github.com/nazmulhasannabil/inventory-management/blob/1149184e60b41159d7b0a1f0c328f3b6a4b43163/public/addproduct.png)
 *Intuitive form with validation and success notifications*
 
 ## 🚀 Getting Started
