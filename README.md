@@ -1,6 +1,6 @@
 # 📦 Inventory Management System
 
-![Banner](/inventorypro.png)
+![Inventory Pro Banner](/inventorypro.png)
 
 A modern, full-stack inventory management system built with Next.js 16, featuring real-time analytics, stock tracking, and a beautiful dark-themed UI.
 
@@ -46,19 +46,19 @@ A modern, full-stack inventory management system built with Next.js 16, featurin
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](/inventorypro.png)
 *Real-time analytics and key metrics at a glance*
 
 ### Sidebar Navigation
-![Sidebar](./screenshots/sidebar.png)
+![Sidebar](/inventorypro.png)
 *Clean, modern sidebar with intuitive navigation*
 
 ### Product Management
-![Products](./product.png)
+![Products](/product.png)
 *Comprehensive product listing with search and pagination*
 
 ### Add Product Form
-![Add Product](./addproduct.png)
+![Add Product](/addproduct.png)
 *Intuitive form with validation and success notifications*
 
 ## 🚀 Getting Started
