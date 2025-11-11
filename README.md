@@ -1,36 +1,241 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📦 Inventory Management System
 
-## Getting Started
+![Banner](./screenshots/banner.png)
 
-First, run the development server:
+A modern, full-stack inventory management system built with Next.js 16, featuring real-time analytics, stock tracking, and a beautiful dark-themed UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+### 🎯 Core Functionality
+- **Product Management** - Add, view, and delete products with ease
+- **Real-time Analytics** - Visual charts showing product trends over time
+- **Low Stock Alerts** - Automatic notifications for products running low
+- **Search & Filter** - Quickly find products with advanced search
+- **Pagination** - Efficient browsing through large product catalogs
+
+### 🎨 User Experience
+- **Dark Sidebar Navigation** - Sleek, modern sidebar with active route highlighting
+- **Responsive Design** - Works seamlessly on desktop and mobile devices
+- **Form Validation** - Zod-powered validation for data integrity
+- **Success Notifications** - SweetAlert2 integration for user feedback
+- **Loading States** - Smooth loading animations with Lottie
+
+### 🔐 Security & Auth
+- **Stack Auth Integration** - Secure authentication out of the box
+- **User-specific Data** - Each user sees only their own inventory
+- **Server-side Validation** - All actions validated on the server
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **[Next.js 16](https://nextjs.org/)** - React framework with App Router
+- **[React 19](https://react.dev/)** - Latest React with Server Components
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
+- **[Tailwind CSS 4](https://tailwindcss.com/)** - Utility-first styling
+- **[Recharts](https://recharts.org/)** - Beautiful chart components
+- **[React Icons](https://react-icons.github.io/react-icons/)** - Icon library
+- **[SweetAlert2](https://sweetalert2.github.io/)** - Elegant alerts
+- **[Lottie React](https://www.npmjs.com/package/lottie-react)** - Animations
+
+### Backend
+- **[Prisma](https://www.prisma.io/)** - Type-safe ORM
+- **[PostgreSQL](https://www.postgresql.org/)** - Robust database
+- **[Zod](https://zod.dev/)** - Schema validation
+- **[Stack Auth](https://docs.stack-auth.com/)** - Authentication provider
+
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
+*Real-time analytics and key metrics at a glance*
+
+### Sidebar Navigation
+![Sidebar](./screenshots/sidebar.png)
+*Clean, modern sidebar with intuitive navigation*
+
+### Product Management
+![Products](./screenshots/products.png)
+*Comprehensive product listing with search and pagination*
+
+### Add Product Form
+![Add Product](./screenshots/add-product.png)
+*Intuitive form with validation and success notifications*
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 20+ 
+- PostgreSQL database
+- npm or yarn package manager
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd inventory-management
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   
+   Create a `.env` file in the root directory:
+   ```env
+   DATABASE_URL="postgresql://user:password@localhost:5432/inventory_db"
+   STACK_PROJECT_ID="your_stack_project_id"
+   STACK_PUBLISHABLE_CLIENT_KEY="your_stack_publishable_key"
+   STACK_SECRET_SERVER_KEY="your_stack_secret_key"
+   ```
+
+4. **Set up the database**
+   ```bash
+   # Generate Prisma Client
+   npx prisma generate
+   
+   # Run migrations
+   npx prisma migrate dev
+   
+   # Seed the database (optional)
+   npx tsx prisma/seed.ts
+   ```
+
+5. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+6. **Open your browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📁 Project Structure
+
+```
+inventory-management/
+├── app/                      # Next.js App Router pages
+│   ├── add-product/         # Add product page
+│   ├── dashboard/           # Dashboard with analytics
+│   ├── inventory/           # Product listing page
+│   ├── sign-in/             # Authentication page
+│   └── layout.tsx           # Root layout
+├── component/               # Reusable React components
+│   ├── AddProductForm.tsx   # Product form with validation
+│   ├── Pagination.tsx       # Pagination component
+│   ├── ProductChart.tsx     # Chart visualization
+│   └── SideBar.tsx          # Navigation sidebar
+├── lib/                     # Utility functions and configs
+│   ├── actions/             # Server actions
+│   │   └── products.ts      # Product CRUD operations
+│   ├── auth.ts              # Authentication helpers
+│   └── prisma.ts            # Prisma client instance
+├── prisma/                  # Database schema and migrations
+│   ├── schema.prisma        # Database schema
+│   └── seed.ts              # Seed data script
+└── stack/                   # Stack Auth configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Key Features Explained
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Dashboard Analytics
+The dashboard provides:
+- **Total Products Count** - Overview of inventory size
+- **Total Inventory Value** - Calculated from price × quantity
+- **Low Stock Alerts** - Products below threshold
+- **Weekly Trends** - Interactive chart showing product additions
+- **Stock Level Indicators** - Visual status for each product
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Product Management
+- **Add Products** - Form with validation and sweet alert confirmation
+- **View Products** - Paginated table with search functionality
+- **Delete Products** - One-click deletion with confirmation
+- **SKU Tracking** - Optional SKU codes for product identification
+- **Low Stock Thresholds** - Custom alerts per product
 
-## Learn More
+### Data Validation
+All forms use Zod schema validation:
+- Product names (1-255 characters)
+- Prices (non-negative numbers)
+- Quantities (whole numbers, non-negative)
+- SKU codes (optional, unique)
+- Low stock thresholds (optional, positive integers)
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Available Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Development
+npm run dev          # Start development server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Production
+npm run build        # Build for production
+npm run start        # Start production server
 
-## Deploy on Vercel
+# Database
+npx prisma generate  # Generate Prisma Client
+npx prisma migrate dev  # Run migrations
+npx tsx prisma/seed.ts  # Seed database
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Code Quality
+npm run lint         # Run ESLint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🗄️ Database Schema
+
+### Product Model
+```prisma
+model Product {
+  id         String   @id @default(cuid())
+  userId     String   // Stack Auth User ID
+  name       String
+  sku        String?  @unique
+  price      Decimal  @db.Decimal(12,2)
+  quantity   Int      @default(0)
+  lowStockAt Int?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+```
+
+## 🎯 Roadmap
+
+- [ ] Export to CSV/Excel
+- [ ] Bulk product import
+- [ ] Product categories
+- [ ] Advanced filtering
+- [ ] Email notifications for low stock
+- [ ] Product images
+- [ ] Barcode scanning
+- [ ] Multi-warehouse support
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/) - The React Framework
+- [Prisma](https://www.prisma.io/) - Next-generation ORM
+- [Stack Auth](https://docs.stack-auth.com/) - Authentication made easy
+- [Tailwind CSS](https://tailwindcss.com/) - Styling framework
+- [Recharts](https://recharts.org/) - Charting library
+
+## 📧 Contact
+
+For questions or feedback, please open an issue on GitHub.
+
+---
+
+**Made with ❤️ using Next.js 16 and modern web technologies**
