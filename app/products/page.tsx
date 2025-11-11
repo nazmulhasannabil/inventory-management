@@ -10,7 +10,7 @@ type InventoryPageProps = {
 };
 
 // Configuration constants
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 8;
 const DEFAULT_PAGE = 1;
 
 // Table column headers configuration
@@ -59,7 +59,7 @@ export default async function InventoryPage({
     <div className="flex h-screen bg-gray-50 overflow-hidden">
       <Sidebar currentPath="/products" />
       
-      <main className="flex-1 p-8 overflow-y-auto">
+      <main className="flex-1 p-6 overflow-y-auto">
         {/* Page header section */}
         <div className="mb-8">
           <div className="flex items-center justify-between">
@@ -76,8 +76,8 @@ export default async function InventoryPage({
 
         <div className="space-y-6">
           {/* Search bar section */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <form className="flex gap-2" action="/inventory" method="GET">
+          <div className="bg-white rounded-lg border-0 border-gray-200 ">
+            <form className="flex gap-2" action="/products" method="GET">
               <input
                 name="q"
                 placeholder="Search products..."
@@ -157,11 +157,11 @@ export default async function InventoryPage({
 
           {/* Pagination controls - only shown when multiple pages exist */}
           {paginationPages > 1 && (
-            <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <div className="bg-white rounded-lg border-0 border-gray-200">
               <Pagination
                 currentPage={currentPage}
                 totalPages={paginationPages}
-                baseUrl="/inventory"
+                baseUrl="/products"
                 searchParams={{
                   q: searchQuery,
                   pageSize: String(ITEMS_PER_PAGE),

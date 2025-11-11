@@ -8,7 +8,6 @@ const SideBar = ({ currentPath = "/dashboard" }: { currentPath: string }) => {
     { href: "/dashboard", icon: FiHome, label: "Dashboard" },
     { href: "/products", icon: FaCartArrowDown, label: "Products" },
     { href: "/add-product", icon: FiPlusCircle, label: "Add Product" },
-    { href: "/analytics", icon: FiBarChart2, label: "Analytics" },
     { href: "/settings", icon: FiSettings, label: "Settings" },
   ];
 
