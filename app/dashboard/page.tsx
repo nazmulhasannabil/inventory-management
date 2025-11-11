@@ -19,6 +19,7 @@ export default async function DashboardPage() {
         quantity: { lte: 5 },
       },
     }),
+    
     prisma.product.findMany({
       where: { userId },
       select: { price: true, quantity: true, createdAt: true },
