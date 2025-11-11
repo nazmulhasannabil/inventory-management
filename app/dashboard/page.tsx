@@ -26,7 +26,7 @@ export default async function DashboardPage() {
   ]);
 
   const totalValue = allProducts.reduce(
-    (sum, product) => sum + Number(product.price) * Number(product.quantity),
+    (sum: number, product) => sum + Number(product.price) * Number(product.quantity),
     0
   );
 
