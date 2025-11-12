@@ -16,10 +16,10 @@ const SideBar = ({ currentPath = "/dashboard" }: { currentPath: string }) => {
       {/* Logo/Brand */}
       <div className="p-6  border-gray-800">
 
-        <div className="flex items-center gap-2">
-          <span className="text-2xl text-[#D86BDB] cursor-pointer"><FiPackage /></span>
-          <h1 className="text-2xl font-bold text-[#D86BDB] cursor-pointer">Inventory Pro</h1>
-        </div>
+        <Link href="/" className="flex items-center gap-2">
+          <span className="text-2xl text-[#D86BDB]"><FiPackage /></span>
+          <h1 className="text-2xl font-bold text-[#D86BDB] hover:opacity-80 transition">Inventory Pro</h1>
+        </Link>
       </div>
 
       {/* Navigation */}
