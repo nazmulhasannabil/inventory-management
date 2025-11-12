@@ -105,25 +105,25 @@ export default function AddProductForm({ createProductAction }: AddProductFormPr
     <div className="max-w-4xl">
       <div className="bg-white shadow-sm rounded-xl border border-gray-200 overflow-hidden">
         {/* Form header */}
-        <div className="bg-linear-gradient-to-r from-purple-600 to-blue-600 px-8 py-6">
-          <h2 className="text-xl font-semibold text-gray-700">
+        <div className="bg-linear-gradient-to-r from-purple-600 to-blue-600 px-4 md:px-8 py-4 md:py-6">
+          <h2 className="text-lg md:text-xl font-semibold text-gray-700">
             Product Information
           </h2>
-          <p className="text-purple-400 text-sm mt-1">
+          <p className="text-purple-400 text-xs md:text-sm mt-1">
             Fields marked with * are required
           </p>
         </div>
 
         {/* Form content */}
-        <form ref={formRef} action={handleSubmit} className="p-8">
-          <div className="grid grid-cols-2 gap-6">
+        <form ref={formRef} action={handleSubmit} className="p-4 md:p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {FORM_FIELDS.map((field) => {
               const IconComponent = field.icon;
               return (
-                <div key={field.id} className={field.gridSpan}>
+                <div key={field.id} className={`md:${field.gridSpan} col-span-1`}>
                   <label
                     htmlFor={field.id}
-                    className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3"
+                    className="flex items-center gap-2 text-xs md:text-sm font-semibold text-gray-700 mb-2 md:mb-3"
                   >
                     <IconComponent className="text-purple-600" />
                     {field.label}
@@ -139,7 +139,7 @@ export default function AddProductForm({ createProductAction }: AddProductFormPr
                     placeholder={field.placeholder}
                     min={field.min}
                     step={field.step}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none"
+                    className="w-full px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none text-sm md:text-base"
                   />
                 </div>
               );
@@ -147,16 +147,16 @@ export default function AddProductForm({ createProductAction }: AddProductFormPr
           </div>
 
           {/* Action buttons */}
-          <div className="flex items-center gap-4 mt-8 pt-6 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200">
             <button
               type="submit"
-              className="flex-1 px-8 py-3 bg-linear-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md hover:shadow-lg"
+              className="w-full sm:flex-1 px-6 md:px-8 py-2 md:py-3 bg-linear-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md hover:shadow-lg text-sm md:text-base"
             >
               Save Product
             </button>
             <Link
               href="/dashboard"
-              className="flex-1 px-8 py-3 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-all text-center"
+              className="w-full sm:flex-1 px-6 md:px-8 py-2 md:py-3 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-all text-center text-sm md:text-base"
             >
               Cancel
             </Link>

@@ -59,13 +59,13 @@ export default async function InventoryPage({
     <div className="flex h-screen bg-gray-50 overflow-hidden">
       <Sidebar currentPath="/products" />
       
-      <main className="flex-1 p-6 overflow-y-auto">
+      <main className="flex-1 p-6 mt-16 overflow-y-auto">
         {/* Page header section */}
         <div className="mb-8">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-semibold text-gray-900">
-                Inventory
+                Products
               </h1>
               <p className="text-sm text-gray-500">
                 Manage your products and track inventory levels.

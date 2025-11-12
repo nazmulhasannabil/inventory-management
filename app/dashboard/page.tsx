@@ -85,17 +85,17 @@ export default async function DashboardPage() {
   // console.log(totalValue);
 
   return (
-    <div className="flex h-screen bg-gray-50 overflow-hidden">
+    <div className="flex flex-col lg:flex-row h-screen bg-gray-50 overflow-hidden">
       <Sidebar currentPath="/dashboard" />
-      <main className="flex-1 p-6 overflow-y-auto">
+      <main className="flex-1 p-4 md:p-6 overflow-y-auto lg:ml-0 mt-16 lg:mt-0">
         {/* Header */}
         <div className="mb-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-semibold text-gray-900">
+              <h1 className="text-xl md:text-2xl font-semibold text-gray-900">
                 Dashboard
               </h1>
-              <p className="text-sm text-gray-500">
+              <p className="text-xs md:text-sm text-gray-500">
                 Welcome back! Here is an overview of your inventory.
               </p>
             </div>
@@ -104,16 +104,16 @@ export default async function DashboardPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
           {/* Key Metrics */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-6">
+          <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6">
+            <h2 className="text-base md:text-lg font-semibold text-gray-900 mb-4 md:mb-6">
               Key Metrics
             </h2>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-3 md:gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">
+                <div className="text-2xl md:text-3xl font-bold text-gray-900">
                   {totalProducts}
                 </div>
-                <div className="text-sm text-gray-600">Total Products</div>
+                <div className="text-xs md:text-sm text-gray-600">Total Products</div>
                 <div className="flex items-center justify-center mt-1">
                   <span className="text-xs text-green-600">
                     +{totalProducts}
@@ -123,10 +123,10 @@ export default async function DashboardPage() {
               </div>
 
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">
+                <div className="text-2xl md:text-3xl font-bold text-gray-900">
                   ${Number(totalValue).toFixed(0)}
                 </div>
-                <div className="text-sm text-gray-600">Total Value</div>
+                <div className="text-xs md:text-sm text-gray-600">Total Value</div>
                 <div className="flex items-center justify-center mt-1">
                   <span className="text-xs text-green-600">
                     +${Number(totalValue).toFixed(0)}
@@ -136,10 +136,10 @@ export default async function DashboardPage() {
               </div>
 
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">
+                <div className="text-2xl md:text-3xl font-bold text-gray-900">
                   {lowStock}
                 </div>
-                <div className="text-sm text-gray-600">Low Stock</div>
+                <div className="text-xs md:text-sm text-gray-600">Low Stock</div>
                 <div className="flex items-center justify-center mt-1">
                   <span className="text-xs text-green-600">+{lowStock}</span>
                   <TrendingUp className="w-3 h-3 text-green-600 ml-1" />
@@ -148,10 +148,10 @@ export default async function DashboardPage() {
             </div>
           </div>
 
-          {/* Iventory over time */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <div className="flex items-center justify-between mb-6">
-              <h2>New products per week</h2>
+          {/* Inventory over time */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6">
+            <div className="flex items-center justify-between mb-4 md:mb-6">
+              <h2 className="text-base md:text-lg font-semibold">New products per week</h2>
             </div>
             <div className="h-48">
               <ProductChart data={weeklyProductsData} />
@@ -161,9 +161,9 @@ export default async function DashboardPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
           {/* Stock Levels */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-semibold text-gray-900">
+          <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6">
+            <div className="flex items-center justify-between mb-4 md:mb-6">
+              <h2 className="text-base md:text-lg font-semibold text-gray-900">
                 Stock Levels
               </h2>
             </div>
@@ -195,12 +195,12 @@ export default async function DashboardPage() {
                       <div
                         className={`w-3 h-3 rounded-full ${bgColors[stockLevel]}`}
                       />
-                      <span className="text-sm font-medium text-gray-900">
+                      <span className="text-xs md:text-sm font-medium text-gray-900 truncate">
                         {product.name}
                       </span>
                     </div>
                     <div
-                      className={`text-sm font-medium ${textColors[stockLevel]}`}
+                      className={`text-xs md:text-sm font-medium ${textColors[stockLevel]} whitespace-nowrap`}
                     >
                       {product.quantity} units
                     </div>
@@ -211,14 +211,14 @@ export default async function DashboardPage() {
           </div>
 
           {/* Efficiency */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-semibold text-gray-900">
+          <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6">
+            <div className="flex items-center justify-between mb-4 md:mb-6">
+              <h2 className="text-base md:text-lg font-semibold text-gray-900">
                 Efficiency
               </h2>
             </div>
             <div className="flex items-center justify-center">
-              <div className="relative w-48 h-48">
+              <div className="relative w-40 h-40 md:w-48 md:h-48">
                 <div className="absolute inset-0 rounded-full border-8 border-gray-200"></div>
                 <div
                   className="absolute inset-0 rounded-full border-8 border-purple-600"
@@ -229,28 +229,28 @@ export default async function DashboardPage() {
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-900">
+                    <div className="text-xl md:text-2xl font-bold text-gray-900">
                       {inStockPercentage}%
                     </div>
-                    <div className="text-sm text-gray-600">In Stock</div>
+                    <div className="text-xs md:text-sm text-gray-600">In Stock</div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="mt-6 space-y-2">
-              <div className="flex items-center justify-between text-sm text-gray-600">
+              <div className="flex items-center justify-between text-xs md:text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 rounded-full bg-purple-200" />
                   <span>In Stock ({inStockPercentage}%)</span>
                 </div>
               </div>
-              <div className="flex items-center justify-between text-sm text-gray-600">
+              <div className="flex items-center justify-between text-xs md:text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 rounded-full bg-purple-600" />
                   <span>Low Stock ({lowStockPercentage}%)</span>
                 </div>
               </div>
-              <div className="flex items-center justify-between text-sm text-gray-600">
+              <div className="flex items-center justify-between text-xs md:text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 rounded-full bg-gray-200" />
                   <span>Out of Stock ({outOfStockPercentage}%)</span>
