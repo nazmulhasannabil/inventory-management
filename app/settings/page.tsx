@@ -9,7 +9,7 @@ export default async function SettingsPage() {
     <div className="flex h-screen bg-gray-50 overflow-hidden">
       <Sidebar currentPath="/settings" />
 
-      <main className="flex-1 p-8 mt-16 overflow-y-auto">
+      <main className="flex-1 p-8 mt-16 lg:mt-0 overflow-y-auto">
         <div className="mb-8">
           <div className="flex items-center justify-between">
             <div>
